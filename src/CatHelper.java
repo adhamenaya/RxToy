@@ -37,7 +37,6 @@ public class CatHelper {
                             cutestCatCallabck.onError(ex);
                         }
                     });
-
                 }
 
                 @Override
