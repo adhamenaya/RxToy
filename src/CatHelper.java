@@ -12,13 +12,19 @@ public class CatHelper {
         // 1- Get all cats
         // 2- Find the cutest cat
         // 3- Store the cutest cat
-        List<Cat> cats = api.queryCats(query);
 
-        Cat cat = findCutestCat(cats);
+        try {
+            List<Cat> cats = api.queryCats(query);
 
-        String uri = api.store(cat);
+            Cat cat = findCutestCat(cats);
 
-        return uri;
+            String uri = api.store(cat);
+
+            return uri;
+        }catch(Exception ex){
+            ex.printStackTrace();
+            return null;
+        }
     }
 
     public Cat findCutestCat(List<Cat> list){
