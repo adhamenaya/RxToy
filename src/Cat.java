@@ -1,4 +1,4 @@
-public class Cat {
+public class Cat implements Comparable<Cat>{
 
     String name;
     int cuteness;
@@ -8,4 +8,8 @@ public class Cat {
         this.cuteness = cuteness;
     }
 
+    @Override
+    public int compareTo(Cat o) {
+        return this.cuteness - o.cuteness;
+    }
 }
