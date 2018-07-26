@@ -22,26 +22,12 @@ public class CatHelper {
 
         AsyncJob<List<Cat>> catsListAsyncJob = apiWrapper.queryCats(query);
 
-        AsyncJob<Cat> cutestCatAsyncJob = new AsyncJob<Cat>() {
+        AsyncJob<Cat> cutestCatAsyncJob = catsListAsyncJob.map(new Func<List<Cat>, Cat>() {
             @Override
-            public void start(Callback<Cat> callback) {
-                catsListAsyncJob.start(new Callback<List<Cat>>() {
-                    @Override
-                    public void onResult(List<Cat> cats) {
-                        Cat c = findCutestCat(cats);
-                        if (c == null)
-                            callback.onError(new Exception("Cat not found!"));
-                        else
-                            callback.onResult(c);
-                    }
-
-                    @Override
-                    public void onError(Exception ex) {
-                        callback.onError(ex);
-                    }
-                });
+            public Cat call(List<Cat> cats) {
+                return findCutestCat(cats);
             }
-        };
+        });
 
         AsyncJob<String> storedUriAsyncJob = new AsyncJob<String>() {
             @Override
