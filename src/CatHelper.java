@@ -11,17 +11,44 @@ public class CatHelper {
         void onCatSaved(String uri);
     }
 
-    ApiWrapper apiWrapper;
+    private ApiWrapper apiWrapper;
+
+    public CatHelper() {
+        apiWrapper = new ApiWrapper();
+    }
 
 
     public AsyncJob<String> saveTheCutestCat(String query) {
-        return new AsyncJob<String>() {
+
+        AsyncJob<List<Cat>> catsListAsyncJob = apiWrapper.queryCats(query);
+
+        AsyncJob<Cat> cutestCatAsyncJob = new AsyncJob<Cat>() {
             @Override
-            public void start(Callback<String> callback) {
-                apiWrapper.queryCats(query).start(new Callback<List<Cat>>() {
+            public void start(Callback<Cat> callback) {
+                catsListAsyncJob.start(new Callback<List<Cat>>() {
                     @Override
                     public void onResult(List<Cat> cats) {
-                        Cat cat = findCutestCat(cats);
+                        Cat c = findCutestCat(cats);
+                        if (c == null)
+                            callback.onError(new Exception("Cat not found!"));
+                        else
+                            callback.onResult(c);
+                    }
+
+                    @Override
+                    public void onError(Exception ex) {
+                        callback.onError(ex);
+                    }
+                });
+            }
+        };
+
+        AsyncJob<String> storedUriAsyncJob = new AsyncJob<String>() {
+            @Override
+            public void start(Callback<String> callback) {
+                cutestCatAsyncJob.start(new Callback<Cat>() {
+                    @Override
+                    public void onResult(Cat cat) {
                         apiWrapper.store(cat).start(new Callback<String>() {
                             @Override
                             public void onResult(String s) {
@@ -42,9 +69,10 @@ public class CatHelper {
                 });
             }
         };
+        return storedUriAsyncJob;
     }
 
-    public Cat findCutestCat(List<Cat> list) {
+    private Cat findCutestCat(List<Cat> list) {
         return Collections.max(list);
     }
 }
