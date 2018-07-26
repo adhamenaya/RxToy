@@ -14,22 +14,25 @@ public class CatHelper {
     ApiWrapper apiWrapper;
 
 
-    public void saveTheCutestCat(String query, Callback<String> callback) {
-
-        // Steps:
-        // 1- Get all cats
-        // 2- Find the cutest cat
-        // 3- Store the cutest cat
-
-        apiWrapper.queryCats(query, new Callback<List<Cat>>() {
+    public AsyncJob<String> saveTheCutestCat(String query) {
+        return new AsyncJob<String>() {
             @Override
-            public void onResult(List<Cat> cats) {
-                Cat cat = findCutestCat(cats);
-
-                apiWrapper.store(cat, new Callback<String>() {
+            public void start(Callback<String> callback) {
+                apiWrapper.queryCats(query).start(new Callback<List<Cat>>() {
                     @Override
-                    public void onResult(String uri) {
-                        callback.onResult(uri);
+                    public void onResult(List<Cat> cats) {
+                        Cat cat = findCutestCat(cats);
+                        apiWrapper.store(cat).start(new Callback<String>() {
+                            @Override
+                            public void onResult(String s) {
+                                callback.onResult(s);
+                            }
+
+                            @Override
+                            public void onError(Exception ex) {
+                                callback.onError(ex);
+                            }
+                        });
                     }
 
                     @Override
@@ -38,12 +41,7 @@ public class CatHelper {
                     }
                 });
             }
-
-            @Override
-            public void onError(Exception ex) {
-                callback.onError(ex);
-            }
-        });
+        };
     }
 
     public Cat findCutestCat(List<Cat> list) {

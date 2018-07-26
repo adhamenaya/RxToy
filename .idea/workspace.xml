@@ -1,10 +1,10 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="403a1509-c1c4-4184-b4a8-c0b8db4cca52" name="Default" comment="Go async network call">
-      <change afterPath="$PROJECT_DIR$/src/ApiWrapper.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/Callback.java" afterDir="false" />
+    <list default="true" id="403a1509-c1c4-4184-b4a8-c0b8db4cca52" name="Default" comment="">
+      <change afterPath="$PROJECT_DIR$/src/AsyncJob.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/ApiWrapper.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/ApiWrapper.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/CatHelper.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/CatHelper.java" afterDir="false" />
     </list>
     <ignored path="$PROJECT_DIR$/out/" />
@@ -17,21 +17,24 @@
   </component>
   <component name="FileEditorManager">
     <leaf>
-      <file leaf-file-name="CatHelper.java" pinned="false" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/src/CatHelper.java">
+      <file leaf-file-name="ApiWrapper.java" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/ApiWrapper.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="360">
-              <caret line="45" column="11" selection-start-line="45" selection-start-column="11" selection-end-line="45" selection-end-column="11" />
+            <state>
+              <caret lean-forward="true" />
               <folding>
-                <element signature="imports" expanded="true" />
-                <element signature="e#801#802#0" expanded="true" />
-                <element signature="e#868#869#0" expanded="true" />
-                <element signature="e#935#936#0" expanded="true" />
-                <element signature="e#1001#1002#0" expanded="true" />
-                <element signature="e#708#709#0" expanded="true" />
-                <element signature="e#746#747#0" expanded="true" />
-                <element signature="e#1585#1586#0" expanded="true" />
-                <element signature="e#1629#1630#0" expanded="true" />
+                <element signature="e#130#613#0" expanded="true" />
+                <element signature="e#406#407#0" expanded="true" />
+                <element signature="e#473#474#0" expanded="true" />
+                <element signature="e#570#571#0" expanded="true" />
+                <element signature="e#625#626#0" expanded="true" />
+                <element signature="e#612#613#0" expanded="true" />
+                <element signature="e#745#1204#0" expanded="true" />
+                <element signature="e#997#998#0" expanded="true" />
+                <element signature="e#1055#1056#0" expanded="true" />
+                <element signature="e#1163#1164#0" expanded="true" />
+                <element signature="e#1218#1219#0" expanded="true" />
+                <element signature="e#1203#1204#0" expanded="true" />
               </folding>
             </state>
           </provider>
@@ -46,21 +49,33 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="ApiWrapper.java" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/ApiWrapper.java">
+      <file leaf-file-name="CatHelper.java" pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/src/CatHelper.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="493">
-              <caret line="29" column="35" selection-start-line="29" selection-start-column="35" selection-end-line="29" selection-end-column="35" />
+            <state relative-caret-position="462">
+              <caret line="39" column="43" selection-start-line="39" selection-start-column="43" selection-end-line="39" selection-end-column="43" />
               <folding>
-                <element signature="e#269#270#0" expanded="true" />
-                <element signature="e#320#321#0" expanded="true" />
-                <element signature="e#401#402#0" expanded="true" />
-                <element signature="e#440#441#0" expanded="true" />
-                <element signature="e#636#637#0" expanded="true" />
-                <element signature="e#679#680#0" expanded="true" />
-                <element signature="e#781#782#0" expanded="true" />
-                <element signature="e#831#832#0" expanded="true" />
+                <element signature="imports" expanded="true" />
+                <element signature="e#356#829#0" expanded="true" />
+                <element signature="e#858#859#0" expanded="true" />
+                <element signature="e#941#942#0" expanded="true" />
+                <element signature="e#1045#1046#0" expanded="true" />
+                <element signature="e#1128#1129#0" expanded="true" />
+                <element signature="e#1266#1267#0" expanded="true" />
+                <element signature="e#1332#1333#0" expanded="true" />
+                <element signature="e#828#829#0" expanded="true" />
+                <element signature="e#586#587#0" expanded="true" />
+                <element signature="e#630#631#0" expanded="true" />
               </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="AsyncJob.java" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/AsyncJob.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="34">
+              <caret line="2" column="51" selection-start-line="2" selection-start-column="51" selection-end-line="2" selection-end-column="51" />
             </state>
           </provider>
         </entry>
@@ -89,7 +104,7 @@
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
     <option name="RECENT_BRANCH_BY_REPOSITORY">
       <map>
-        <entry key="$PROJECT_DIR$" value="async" />
+        <entry key="$PROJECT_DIR$" value="generic-callback" />
       </map>
     </option>
   </component>
@@ -99,6 +114,7 @@
         <option value="$PROJECT_DIR$/src/Cat.java" />
         <option value="$PROJECT_DIR$/src/Api.java" />
         <option value="$PROJECT_DIR$/src/Callback.java" />
+        <option value="$PROJECT_DIR$/src/AsyncJob.java" />
         <option value="$PROJECT_DIR$/src/ApiWrapper.java" />
         <option value="$PROJECT_DIR$/src/CatHelper.java" />
       </list>
@@ -231,7 +247,14 @@
       <option name="project" value="LOCAL" />
       <updated>1532283986061</updated>
     </task>
-    <option name="localTasksCounter" value="4" />
+    <task id="LOCAL-00004" summary="Generic callback">
+      <created>1532284976064</created>
+      <option name="number" value="00004" />
+      <option name="presentableId" value="LOCAL-00004" />
+      <option name="project" value="LOCAL" />
+      <updated>1532284976064</updated>
+    </task>
+    <option name="localTasksCounter" value="5" />
     <servers />
   </component>
   <component name="ToolWindowManager">
@@ -245,8 +268,8 @@
       <window_info anchor="right" id="Capture Analysis" order="3" />
       <window_info anchor="bottom" id="Event Log" order="7" side_tool="true" />
       <window_info anchor="right" id="Maven Projects" order="3" />
-      <window_info anchor="bottom" id="Run" order="2" />
       <window_info anchor="bottom" id="Version Control" order="7" />
+      <window_info anchor="bottom" id="Run" order="2" />
       <window_info anchor="bottom" id="Terminal" order="7" />
       <window_info id="Capture Tool" order="2" />
       <window_info id="Designer" order="2" />
@@ -255,8 +278,8 @@
       <window_info anchor="right" id="Ant Build" order="1" weight="0.25" />
       <window_info id="UI Designer" order="2" />
       <window_info anchor="right" id="Theme Preview" order="3" />
-      <window_info anchor="bottom" id="Debug" order="3" weight="0.4" />
       <window_info id="Favorites" order="2" side_tool="true" />
+      <window_info anchor="bottom" id="Debug" order="3" weight="0.4" />
       <window_info anchor="right" content_ui="combo" id="Hierarchy" order="2" weight="0.25" />
       <window_info anchor="bottom" id="Inspection" order="5" weight="0.4" />
       <window_info anchor="right" id="Commander" internal_type="SLIDING" order="0" type="SLIDING" weight="0.4" />
@@ -271,7 +294,8 @@
   <component name="VcsManagerConfiguration">
     <MESSAGE value="Error handling" />
     <MESSAGE value="Go async network call" />
-    <option name="LAST_COMMIT_MESSAGE" value="Go async network call" />
+    <MESSAGE value="Generic callback" />
+    <option name="LAST_COMMIT_MESSAGE" value="Generic callback" />
   </component>
   <component name="editorHistoryManager">
     <entry file="file://$PROJECT_DIR$/RxToy.iml">
@@ -302,37 +326,50 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/src/AsyncJob.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="34">
+          <caret line="2" column="51" selection-start-line="2" selection-start-column="51" selection-end-line="2" selection-end-column="51" />
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/src/ApiWrapper.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="493">
-          <caret line="29" column="35" selection-start-line="29" selection-start-column="35" selection-end-line="29" selection-end-column="35" />
+        <state>
+          <caret lean-forward="true" />
           <folding>
-            <element signature="e#269#270#0" expanded="true" />
-            <element signature="e#320#321#0" expanded="true" />
-            <element signature="e#401#402#0" expanded="true" />
-            <element signature="e#440#441#0" expanded="true" />
-            <element signature="e#636#637#0" expanded="true" />
-            <element signature="e#679#680#0" expanded="true" />
-            <element signature="e#781#782#0" expanded="true" />
-            <element signature="e#831#832#0" expanded="true" />
+            <element signature="e#130#613#0" expanded="true" />
+            <element signature="e#406#407#0" expanded="true" />
+            <element signature="e#473#474#0" expanded="true" />
+            <element signature="e#570#571#0" expanded="true" />
+            <element signature="e#625#626#0" expanded="true" />
+            <element signature="e#612#613#0" expanded="true" />
+            <element signature="e#745#1204#0" expanded="true" />
+            <element signature="e#997#998#0" expanded="true" />
+            <element signature="e#1055#1056#0" expanded="true" />
+            <element signature="e#1163#1164#0" expanded="true" />
+            <element signature="e#1218#1219#0" expanded="true" />
+            <element signature="e#1203#1204#0" expanded="true" />
           </folding>
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/CatHelper.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="360">
-          <caret line="45" column="11" selection-start-line="45" selection-start-column="11" selection-end-line="45" selection-end-column="11" />
+        <state relative-caret-position="462">
+          <caret line="39" column="43" selection-start-line="39" selection-start-column="43" selection-end-line="39" selection-end-column="43" />
           <folding>
             <element signature="imports" expanded="true" />
-            <element signature="e#801#802#0" expanded="true" />
-            <element signature="e#868#869#0" expanded="true" />
-            <element signature="e#935#936#0" expanded="true" />
-            <element signature="e#1001#1002#0" expanded="true" />
-            <element signature="e#708#709#0" expanded="true" />
-            <element signature="e#746#747#0" expanded="true" />
-            <element signature="e#1585#1586#0" expanded="true" />
-            <element signature="e#1629#1630#0" expanded="true" />
+            <element signature="e#356#829#0" expanded="true" />
+            <element signature="e#858#859#0" expanded="true" />
+            <element signature="e#941#942#0" expanded="true" />
+            <element signature="e#1045#1046#0" expanded="true" />
+            <element signature="e#1128#1129#0" expanded="true" />
+            <element signature="e#1266#1267#0" expanded="true" />
+            <element signature="e#1332#1333#0" expanded="true" />
+            <element signature="e#828#829#0" expanded="true" />
+            <element signature="e#586#587#0" expanded="true" />
+            <element signature="e#630#631#0" expanded="true" />
           </folding>
         </state>
       </provider>
