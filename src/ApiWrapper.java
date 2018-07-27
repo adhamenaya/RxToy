@@ -20,9 +20,9 @@ public class ApiWrapper {
             Cat c1 = new Cat(1, "cat 1");
             Cat c2 = new Cat(2, "cat 2");
             Cat c3 = new Cat(100, "cat 100");
-           // cats.add(c1);
-           // cats.add(c2);
-           // cats.add(c3);
+            cats.add(c1);
+            cats.add(c2);
+            cats.add(c3);
 
             catsQueryCallback.onCatsListReceived(cats);
             if (cats.size() == 0) catsQueryCallback.onQueryFailed(new Exception("Cat not found!"));
