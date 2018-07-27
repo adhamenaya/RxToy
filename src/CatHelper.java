@@ -1,6 +1,5 @@
 import java.util.Collections;
 import java.util.List;
-import java.util.concurrent.ExecutionException;
 
 public class CatHelper {
 
@@ -21,40 +20,18 @@ public class CatHelper {
     public AsyncJob<String> saveTheCutestCat(String query) {
 
         AsyncJob<List<Cat>> catsListAsyncJob = apiWrapper.queryCats(query);
-
         AsyncJob<Cat> cutestCatAsyncJob = catsListAsyncJob.map(new Func<List<Cat>, Cat>() {
             @Override
             public Cat call(List<Cat> cats) {
                 return findCutestCat(cats);
             }
         });
-
-        AsyncJob<String> storedUriAsyncJob = new AsyncJob<String>() {
+        AsyncJob<String> storedUriAsyncJob = cutestCatAsyncJob.flatMap(new Func<Cat, AsyncJob<String>>() {
             @Override
-            public void start(Callback<String> callback) {
-                cutestCatAsyncJob.start(new Callback<Cat>() {
-                    @Override
-                    public void onResult(Cat cat) {
-                        apiWrapper.store(cat).start(new Callback<String>() {
-                            @Override
-                            public void onResult(String s) {
-                                callback.onResult(s);
-                            }
-
-                            @Override
-                            public void onError(Exception ex) {
-                                callback.onError(ex);
-                            }
-                        });
-                    }
-
-                    @Override
-                    public void onError(Exception ex) {
-                        callback.onError(ex);
-                    }
-                });
+            public AsyncJob<String> call(Cat cat) {
+                return apiWrapper.store(cat);
             }
-        };
+        });
         return storedUriAsyncJob;
     }
 
